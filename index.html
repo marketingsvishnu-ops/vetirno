@@ -1,93 +1,630 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apex Media — AI Powered Digital Growth Partner</title>
-  <meta name="description" content="Premium black and gold Apex Media inspired landing page." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SPORTZONE | Latest Sports News</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #080b12;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 7%;
+      background: rgba(8, 11, 18, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #00e5ff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    .live-btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: #ff3158;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 0 20px rgba(255,49,88,.3);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      padding: 80px 7%;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(0,229,255,.18), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(124,58,237,.18), transparent 30%);
+    }
+
+    .hero-content {
+      max-width: 750px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(0,229,255,.4);
+      border-radius: 30px;
+      color: #00e5ff;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 22px;
+      background: rgba(0,229,255,.05);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #00e5ff;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #a5a8b2;
+      line-height: 1.7;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .primary {
+      background: #00e5ff;
+      color: #001015;
+    }
+
+    .secondary {
+      border: 1px solid #333945;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* MAIN */
+    .container {
+      width: 86%;
+      max-width: 1250px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .section-head h2 {
+      font-size: 27px;
+    }
+
+    .section-head a {
+      color: #00e5ff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* NEWS */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #11151f;
+      border: 1px solid #202532;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .35s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #00e5ff;
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+    }
+
+    .card-img {
+      height: 210px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+      background: linear-gradient(135deg, #161c29, #0d111a);
+    }
+
+    .football { background: linear-gradient(135deg,#063d45,#11151f); }
+    .tennis { background: linear-gradient(135deg,#394500,#11151f); }
+    .basketball { background: linear-gradient(135deg,#472100,#11151f); }
+
+    .category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 6px 11px;
+      border-radius: 20px;
+      background: rgba(0,0,0,.55);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-body h3 {
+      font-size: 19px;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .card-body p {
+      color: #858a96;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .meta {
+      margin-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      color: #666c79;
+      font-size: 11px;
+    }
+
+    /* LIVE SCORES */
+    .scores {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .score-card {
+      background: linear-gradient(145deg,#151a25,#0e121a);
+      border: 1px solid #252b38;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .score-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      color: #7d8491;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .live {
+      color: #ff3158;
+    }
+
+    .team {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 0;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .score-number {
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    /* TRENDING */
+    .trending {
+      margin-top: 65px;
+    }
+
+    .trend-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .trend {
+      padding: 20px;
+      background: #11151f;
+      border-radius: 14px;
+      border: 1px solid #202532;
+    }
+
+    .trend-number {
+      color: #00e5ff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .trend h4 {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      padding: 35px 7%;
+      border-top: 1px solid #202532;
+      display: flex;
+      justify-content: space-between;
+      color: #666c79;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+      nav ul {
+        display: none;
+      }
+
+      .news-grid,
+      .scores {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trend-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+      nav {
+        padding: 16px 5%;
+      }
+
+      .hero {
+        padding: 70px 5%;
+        min-height: 500px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .container {
+        width: 90%;
+      }
+
+      .news-grid,
+      .scores,
+      .trend-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
-  <div class="cursor"></div>
-  <header class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#top" class="brand magnetic">
-        <span class="brand-mark">A</span>
-        <span><b>APEX</b><small>MEDIA</small></span>
-      </a>
-      <nav>
-        <a href="#services"><em>01</em>Services</a>
-        <a href="#portfolio"><em>02</em>Work</a>
-        <a href="#process"><em>03</em>Process</a>
-        <a href="#contact"><em>04</em>Contact</a>
-      </nav>
-      <a href="#contact" class="btn primary small magnetic"><span></span>Book Consultation</a>
-      <button class="menu" aria-label="Open menu">☰</button>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="logo">SPORT<span>ZONE</span></div>
+
+```
+<ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#scores">Scores</a></li>
+  <li><a href="#trending">Trending</a></li>
+</ul>
+
+<a href="#scores" class="live-btn">● LIVE</a>
+```
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-content">
+
+```
+  <span class="tag">⚡ SPORTS NEWS • 24/7</span>
+
+  <h1>
+    THE WORLD<br>
+    OF <span>SPORTS</span>
+  </h1>
+
+  <p>
+    Stay ahead of the game with breaking news, live scores,
+    match results, transfer updates and the biggest stories
+    from the world of sports.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#news" class="btn primary">Explore News →</a>
+    <a href="#scores" class="btn secondary">View Live Scores</a>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- NEWS -->
+
+  <main class="container" id="news">
+
+```
+<div class="section-head">
+  <h2>🔥 Latest News</h2>
+  <a href="#">VIEW ALL →</a>
+</div>
+
+<div class="news-grid">
+
+  <article class="card">
+    <div class="card-img football">
+      ⚽
+      <span class="category">FOOTBALL</span>
     </div>
-  </header>
 
-  <main>
-    <section id="top" class="hero">
-      <canvas id="orbCanvas"></canvas>
-      <div class="vignette"></div>
-      <div class="float-card fc1"><small>SEO Dashboard</small><strong>+182%</strong><span>Organic Traffic</span></div>
-      <div class="float-card fc2"><small>Google Ads</small><strong>4.2x</strong><span>ROAS</span></div>
-      <div class="float-card fc3"><small>Apex AI</small><strong>Online</strong><span>247 chats today</span></div>
-      <div class="float-card fc4"><small>Meta Campaign</small><strong>AED 2.10</strong><span>Cost / Lead</span></div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">Apex Media — Dubai, UAE</p>
-        <h1><span>AI</span> <i>Powered</i><br><span>Digital</span> <i>Growth</i><br><i>Partner.</i></h1>
-        <p class="lead">We design, build and scale premium digital experiences for ambitious businesses across the UAE — combining award-winning craft with AI automation that compounds growth.</p>
-        <div class="actions"><a class="btn primary magnetic" href="#contact"><span></span>Book Free Consultation →</a><a class="btn magnetic" href="#portfolio"><span></span>Explore Our Work</a></div>
-        <div class="stats">
-          <div><b>120+</b><small>Brands scaled</small></div><div><b>19</b><small>Growth services</small></div><div><b>350%</b><small>Avg lead lift</small></div><div><b>24/7</b><small>AI uptime</small></div>
-        </div>
+    <div class="card-body">
+      <h3>Transfer Deadline Day Enters Final Hours</h3>
+      <p>
+        Clubs across Europe race to complete major deals
+        as the transfer window reaches its dramatic finale.
+      </p>
+
+      <div class="meta">
+        <span>2 hours ago</span>
+        <span>💬 124</span>
       </div>
-      <div class="scroll">SCROLL <span></span></div>
-    </section>
+    </div>
+  </article>
 
-    <section id="services" class="section">
-      <div class="section-head reveal"><p class="eyebrow">What we do</p><h2>Digital growth <br><i>systems</i> built for <br>modern businesses.</h2><p>From high-converting websites to AI automation, paid ads, SEO, branding and integrations — Apex Media engineers complete systems designed to attract, convert and scale.</p></div>
-      <div class="service-group reveal"><h3><em>01</em> Digital Presence</h3><div class="cards" id="presenceCards"></div></div>
-      <div class="service-group reveal"><h3><em>02</em> Growth & Advertising</h3><div class="cards" id="growthCards"></div></div>
-      <div class="service-group reveal"><h3><em>03</em> AI & Automation</h3><div class="cards" id="aiCards"></div></div>
-      <div class="result-strip reveal"><span>/01 More Leads</span><span>/02 Better Trust</span><span>/03 Higher Conversions</span><span>/04 Smart Automation</span><span>/05 Premium Brand</span></div>
-    </section>
 
-    <section id="portfolio" class="section portfolio">
-      <div class="section-head reveal"><p class="eyebrow">Selected work</p><h2>Crafted experiences. <br><i>Real business results.</i></h2><p>A selection of digital products, brand systems and growth engines built for ambitious operators across the UAE.</p></div>
-      <div class="work-grid reveal">
-        <article class="work big" style="--img:url('https://images.unsplash.com/photo-1723822603065-f799bbe7c3f7?auto=format&fit=crop&w=1200&q=70')"><small>/01 Corporate Services</small><div><em>Branding · Web · CRM</em><h3>Luxury Business Hub</h3><p><b>+340%</b> Inbound Leads &nbsp; <b>+185%</b> Conversion</p></div></article>
-        <article class="work" style="--img:url('https://images.pexels.com/photos/12564248/pexels-photo-12564248.jpeg?auto=compress&cs=tinysrgb&w=1200')"><small>/02 B2B Services</small><div><em>Web · SEO · Google Ads</em><h3>NEXSWITCH Corporate</h3><p><b>4.6x</b> ROAS</p></div></article>
-        <article class="work" style="--img:url('https://images.unsplash.com/photo-1603350902363-3141f62b7dba?auto=format&fit=crop&w=1200&q=70')"><small>/03 Real Estate</small><div><em>Landing Pages · Meta · CRM</em><h3>Apex Real Estate</h3><p><b>+520%</b> Lead Volume</p></div></article>
-        <article class="work big" style="--img:url('https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1200&q=70')"><small>/04 Hospitality</small><div><em>Brand · Web · Video</em><h3>Luxe Hotel Dubai</h3><p><b>+98%</b> Direct Bookings</p></div></article>
+  <article class="card">
+    <div class="card-img tennis">
+      🎾
+      <span class="category">TENNIS</span>
+    </div>
+
+    <div class="card-body">
+      <h3>Grand Slam Action Delivers Another Thriller</h3>
+      <p>
+        The world's best players battle through intense
+        matches as the tournament heads toward its final stages.
+      </p>
+
+      <div class="meta">
+        <span>4 hours ago</span>
+        <span>💬 89</span>
       </div>
-    </section>
+    </div>
+  </article>
 
-    <section id="process" class="section process">
-      <div class="section-head reveal"><p class="eyebrow">Our process</p><h2>Strategy first. <br><i>Execution refined.</i></h2></div>
-      <div class="steps reveal">
-        <div><em>01</em><h3>Discover</h3><p>We map your offer, audience, goals and funnel gaps.</p></div>
-        <div><em>02</em><h3>Design</h3><p>We craft a premium visual system and conversion journey.</p></div>
-        <div><em>03</em><h3>Build</h3><p>We develop responsive pages, tracking and integrations.</p></div>
-        <div><em>04</em><h3>Scale</h3><p>We launch campaigns, automate workflows and optimize.</p></div>
-      </div>
-    </section>
 
-    <section id="contact" class="section contact">
-      <div class="contact-card reveal">
-        <div><p class="eyebrow">Start a project</p><h2>Need a complete <i>growth system?</i></h2><p>Book a free consultation and tell us about your project.</p></div>
-        <form id="contactForm">
-          <input required placeholder="Name *" name="name"><input required type="email" placeholder="Email *" name="email"><input placeholder="Phone" name="phone"><input value="UAE" name="country"><select name="service"><option>Select a service</option><option>Website Design</option><option>SEO</option><option>Google Ads</option><option>AI Automation</option><option>Brand Identity</option></select><select name="budget"><option>Select budget</option><option>AED 1,500 – 5,000</option><option>AED 5,000 – 15,000</option><option>AED 15,000 – 50,000</option></select><textarea placeholder="Tell us about your project" rows="4"></textarea><button class="btn primary" type="submit"><span></span>Send Request →</button>
-        </form>
+  <article class="card">
+    <div class="card-img basketball">
+      🏀
+      <span class="category">BASKETBALL</span>
+    </div>
+
+    <div class="card-body">
+      <h3>Championship Race Heats Up</h3>
+      <p>
+        Teams are battling for crucial wins as the season
+        enters an exciting stretch of competition.
+      </p>
+
+      <div class="meta">
+        <span>6 hours ago</span>
+        <span>💬 71</span>
       </div>
-    </section>
+    </div>
+  </article>
+
+</div>
+
+
+<!-- LIVE SCORES -->
+<section id="scores" style="margin-top:65px;">
+
+  <div class="section-head">
+    <h2>🔴 Live Scores</h2>
+    <a href="#">ALL MATCHES →</a>
+  </div>
+
+  <div class="scores">
+
+    <div class="score-card">
+      <div class="score-top">
+        <span>FOOTBALL</span>
+        <span class="live">● LIVE 72'</span>
+      </div>
+
+      <div class="team">
+        <span>Barcelona</span>
+        <span class="score-number">2</span>
+      </div>
+
+      <div class="team">
+        <span>Real Madrid</span>
+        <span class="score-number">1</span>
+      </div>
+    </div>
+
+
+    <div class="score-card">
+      <div class="score-top">
+        <span>TENNIS</span>
+        <span class="live">● LIVE</span>
+      </div>
+
+      <div class="team">
+        <span>Player A</span>
+        <span class="score-number">6</span>
+      </div>
+
+      <div class="team">
+        <span>Player B</span>
+        <span class="score-number">4</span>
+      </div>
+    </div>
+
+
+    <div class="score-card">
+      <div class="score-top">
+        <span>BASKETBALL</span>
+        <span class="live">● Q3</span>
+      </div>
+
+      <div class="team">
+        <span>Lakers</span>
+        <span class="score-number">78</span>
+      </div>
+
+      <div class="team">
+        <span>Celtics</span>
+        <span class="score-number">74</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TRENDING -->
+<section class="trending" id="trending">
+
+  <div class="section-head">
+    <h2>📈 Trending Now</h2>
+  </div>
+
+  <div class="trend-list">
+
+    <div class="trend">
+      <span class="trend-number">01</span>
+      <h4>Transfer Deadline Day</h4>
+    </div>
+
+    <div class="trend">
+      <span class="trend-number">02</span>
+      <h4>Grand Slam Results</h4>
+    </div>
+
+    <div class="trend">
+      <span class="trend-number">03</span>
+      <h4>Championship Race</h4>
+    </div>
+
+    <div class="trend">
+      <span class="trend-number">04</span>
+      <h4>Top Sports Highlights</h4>
+    </div>
+
+  </div>
+
+</section>
+```
+
   </main>
 
-  <footer><div class="gold-line"></div><h2>Apex Media.</h2><div class="footer-grid"><div><b>Contact</b><a href="tel:+971586169311">+971 58 616 9311</a><a href="mailto:mediaapex15@gmail.com">mediaapex15@gmail.com</a></div><div><b>Location</b><span>Dubai, UAE</span></div><div><b>Services</b><span>Web · SEO · Ads · AI · Branding</span></div><div><b>Follow</b><span>Instagram · LinkedIn · WhatsApp</span></div></div><p>© 2026 Apex Media. All rights reserved.</p></footer>
-  <script src="js/script.js"></script>
+  <!-- FOOTER -->
+
+  <footer>
+    <span>© 2026 SPORTZONE</span>
+    <span>Made for sports fans ⚡</span>
+  </footer>
+
 </body>
 </html>
